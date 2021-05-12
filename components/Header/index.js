@@ -6,7 +6,11 @@ const Header = () => {
     <>
       <div className='bg-gray-200 p-4 shadow-lg'>
         <div className='container mx-auto'>
-          <img className='mx-auto' src="/logo-palpitebox.png" alt='Palpitebox' />
+          <Link href="/">
+            <a>
+              <img className='mx-auto' src="/logo-palpitebox.png" alt='Palpitebox' />
+            </a>
+          </Link>
         </div>
       </div>
       <div className="bg-gray-300 p-4 shadow-lg text-center">
