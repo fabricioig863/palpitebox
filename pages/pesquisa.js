@@ -30,6 +30,7 @@ const Pesquisa = () => {
       [key]: value
     }))
   }
+
   return (
     <div className='pt-6'>
       <h1 className='text-center font-bold my-4 text-2xl'>Críticas e Sugestões</h1>

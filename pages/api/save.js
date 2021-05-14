@@ -27,6 +27,7 @@ export default async (req, res) => {
     let Promo = ''
     if (mostrarPromocaoCell.value === 'VERDADEIRO') {
       // TODO: gerar cupom
+
       Cupom = genCupom()
       Promo = textoCell.value
     }
