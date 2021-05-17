@@ -2,8 +2,12 @@ import { GoogleSpreadsheet } from 'google-spreadsheet';
 
 const doc = new GoogleSpreadsheet(process.env.JWT_SHEET_DOC_ID);
 
-export default async (req, res) => {
+const formBase64 = value => {
+  const buff = Buffer.from(value, 'base64');
+  return buff.toString('ascii');
+}
 
+export default async (req, res) => {
   try {
     await doc.useServiceAccountAuth({
       client_email: process.env.JWT_SHEET_CLIENT_EMAIL,
