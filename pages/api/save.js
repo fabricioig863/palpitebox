@@ -1,7 +1,8 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { formBase64 } from '../../utils/base64';
 import moment from 'moment'
 
-const doc = new GoogleSpreadsheet(process.env.JWT_SHEET_DOC_ID);
+const doc = new GoogleSpreadsheet(process.env.JWT_DOC_ID);
 
 const genCupom = () => {
   const code = parseInt(moment().format('YYMMDDHHmmssSSS')).toString(16).toUpperCase();
@@ -11,8 +12,8 @@ const genCupom = () => {
 export default async (req, res) => {
   try {
     await doc.useServiceAccountAuth({
-      client_email: process.env.JWT_SHEET_CLIENT_EMAIL,
-      private_key: process.env.JWT_SHEET_PRIVATE_KEY
+      client_email: process.env.JWT_CLIENT_EMAIL,
+      private_key: formBase64(process.env.JWT_PRIVATE_KEY)
     });
     await doc.loadInfo()
     const sheet = doc.sheetsByIndex[1];

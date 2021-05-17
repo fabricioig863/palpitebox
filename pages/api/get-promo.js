@@ -1,17 +1,13 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { formBase64 } from '../../utils/base64';
 
-const doc = new GoogleSpreadsheet(process.env.JWT_SHEET_DOC_ID);
-
-const formBase64 = value => {
-  const buff = Buffer.from(value, 'base64');
-  return buff.toString('ascii');
-}
+const doc = new GoogleSpreadsheet(process.env.JWT_DOC_ID);
 
 export default async (req, res) => {
   try {
     await doc.useServiceAccountAuth({
-      client_email: process.env.JWT_SHEET_CLIENT_EMAIL,
-      private_key: process.env.JWT_SHEET_PRIVATE_KEY
+      client_email: process.env.JWT_CLIENT_EMAIL,
+      private_key: formBase64(process.env.JWT_PRIVATE_KEY)
     })
     await doc.loadInfo();
 
