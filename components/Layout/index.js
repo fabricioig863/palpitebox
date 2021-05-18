@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
+import useDarkMode from '../../hooks/useDarkMode';
 
 const Layout = ({ children }) => {
+  useDarkMode()
   return (
-    <div>
+    <div className="dark:bg-gray-900">
       <Header />
       <div className='container mx-auto'>
         {children}
