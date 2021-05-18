@@ -10,7 +10,7 @@ const Index = () => {
   const { data, error } = useSWR('/api/get-promo', fetcher)
   useDarkMode();
   return (
-    <div className="dark:bg-gray-900">
+    <div className="dark:bg-gray-900 transition duration-500">
       <PageTitle title="Seja Bem vindo" />
       <p className='mt-12 text-center font-bold dark:text-white'>
         O restaurante X sempre busca por atender melhor seus clientes.<br />

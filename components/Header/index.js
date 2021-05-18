@@ -5,7 +5,7 @@ import DarkMode from '../DarkMode/index';
 const Header = () => {
   return (
     <>
-      <div className='bg-gray-200 p-4 shadow-lg dark:bg-gray-500 transition duration-700'>
+      <div className='bg-gray-200 p-4 shadow-lg dark:bg-gray-500 transition duration-500'>
         <DarkMode />
         <div className='container mx-auto'>
           <Link href="/">

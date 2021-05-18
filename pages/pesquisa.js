@@ -65,16 +65,16 @@ const Pesquisa = () => {
         <button className="bg-blue-500 px-12 mb-8 w-80 py-4 font-bold text-white rounded-lg shadow-lg hover:bg-blue-600 transition delay-150 duration-300 ease-in-out" onClick={save}>Salvar</button>
       </div>}
       { sucess && <div className='w-1/5 mx-auto'>
-        <p className="mb-6 text-center bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 dark:text-white">Obrigado por contribuir com sua critica ou sugestão</p>
+        <p className="mb-6 text-center bg-blue-200 dark:bg-blue-600 border-t border-b border-blue-500 text-blue-700 px-4 py-3 dark:text-white">Obrigado por contribuir com sua critica ou sugestão</p>
         {
-          retorno.showCoupon && <div className="text-center border p-4 mb-4">
+          retorno.showCoupon && <div className="text-center border p-4 mb-4 dark:text-white">
             Seu cupom: <br />
-            <span className="font-bold text-2xl">{retorno.Cupom}</span>
+            <span className="font-bold text-2xl dark:text-white">{retorno.Cupom}</span>
           </div>
         }
         {
           retorno.showCoupon && <div className="text-center border p-4 mb-4">
-            <span className="font-bold">{retorno.Promo}</span>
+            <span className="font-bold dark:text-white">{retorno.Promo}</span>
             <br />
             <div className="text-center mt-4">
               <p className="text-red-600 font-bold text-2xl dark:text-red-600">Atenção</p>
